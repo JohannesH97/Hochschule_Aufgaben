@@ -1,0 +1,57 @@
+/*
+
+Programmieren Sie eine Funktion welche die Wörter eines Textes zählt.
+
+int count_words(char *text, char *word)
+Als Argumente werden der Text und das Wort übergeben. Die Funktion gibt als Rückgabewert die Anzahl an gefundenen Wörter zurück.
+
+*/
+
+
+
+int check_letter(char letter)
+{
+    if (((letter >= 'A') && (letter <= 'Z')) || ((letter >= 'a') && (letter <= 'z')))
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+int count_words(char *text, char *word)
+{
+    int amount_words = 0;
+    int i = 0;
+    while (text[i+1] != '\0')
+    {   
+
+        if ((check_letter(text[i]) == 0) && (check_letter(text[i+1]) == 1))
+        {
+            i++;
+            int j = 0;
+            int word_correct = 1;
+            while((word[j] != '\0') && (text[i+j] != '\0'))
+            {
+                if (text[i+j] != word[j])
+                {
+                    word_correct = 0;
+                    break;
+                }
+                j++;
+            }
+            if(word_correct == 1)
+            {
+                if ((check_letter(text[i+j]) == 0))
+                {
+                    amount_words++;
+                }
+            }
+        }
+        i++;
+        
+    }
+    return amount_words;
+}
