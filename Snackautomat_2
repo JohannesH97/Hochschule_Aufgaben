@@ -1,0 +1,146 @@
+/*
+
+Erweitern Sie den Snackautomat um das Abfangen einer falschen Eingabe. D.h. prüfen Sie ob der Kunde einen Snack ausgewählt hat welcher verfügbar ist. Wenn eine falsche Auswahl erfolgt ist, fragen Sie den Kunden nochmal.
+
+Die Ausgabe in einem Programm sieht z.B. wie folgt aus:
+
+Waehlen Sie einen Snack aus. Zur Auswahl stehen:
+1) Pickup
+2) Twix
+3) Studentenfutter
+Fehlerhafte Eingabe!
+Fehlerhafte Eingabe!
+Sie haben Twix fuer 0.50 Euro ausgewaehlt.
+Werfen Sie 0.50 Euro ein.
+Sie bekommen 1.50 Euro Restgeld.
+
+*/
+
+
+#include <stdio.h>
+
+void pickup()
+{
+  printf("Sie haben Pickup fuer 0.90 Euro ausgewaehlt.\nWerfen Sie 0.90 Euro ein.\n"); 
+    
+}
+
+void twix()
+{
+  printf("Sie haben Twix fuer 0.50 Euro ausgewaehlt.\nWerfen Sie 0.50 Euro ein.\n");  
+      
+}
+
+void studentenfutter()
+{
+  printf("Sie haben Studentenfutter fuer 1.50 Euro ausgewaehlt.\nWerfen Sie 1.50 Euro ein.\n");  
+    
+}
+
+void bezahlen1()
+{
+    float geld1;
+    float neu_geld1;
+    float pu = 0.90;
+    
+    scanf("%f", &geld1);
+    
+    geld1=pu-geld1;
+    
+       while(geld1>0)
+       {
+           printf("Werfen Sie %.2f",geld1); 
+           printf(" Euro ein.\n");
+           scanf("%f",&neu_geld1); 
+           geld1=geld1-neu_geld1;
+           
+       }
+       geld1=geld1*-1;
+       printf("Sie bekommen %.2f",geld1);
+       printf(" Euro Restgeld.\n");
+}
+    
+void bezahlen2()
+{
+   
+        float geld2;
+        float neu_geld2;
+        float tx = 0.50;
+        
+        scanf("%f", &geld2);
+        geld2=tx-geld2; 
+        while(geld2>0)
+       {
+           printf("Werfen Sie %.2f",geld2); 
+           printf(" Euro ein.\n");
+           scanf("%f",&neu_geld2); 
+           geld2=geld2-neu_geld2;
+           
+       }
+       geld2 = geld2*-1;
+       printf("Sie bekommen %.2f",geld2);
+       printf(" Euro Restgeld.\n");
+        
+}
+
+void bezahlen3()
+{
+        float geld3;
+        float neu_geld3;
+        float sf = 1.50;
+        
+        scanf("%f", &geld3);
+        
+        geld3=sf-geld3; 
+        
+        while(geld3>0)
+        {
+           printf("Werfen Sie %.2f",geld3); 
+           printf(" Euro ein.\n");
+           scanf("%f",&neu_geld3); 
+           geld3=geld3-neu_geld3;
+           
+        }
+       geld3= geld3*-1;
+       printf("Sie bekommen %.2f",geld3);
+       printf(" Euro Restgeld.\n");
+}
+    
+
+int main(){
+    
+   // float neu_geld2;
+   // float neu_geld3;
+    int x; 
+    
+    printf("Waehlen Sie einen Snack aus. Zur Auswahl stehen:\n1) Pickup\n2) Twix\n3) Studentenfutter\n"); 
+    scanf("%d",&x);
+    
+    while( 3<x )
+    {
+        printf("Fehlerhafte Eingabe!\n");
+        scanf("%d",&x);
+    }
+    
+    
+    
+    if(1==x)
+    {
+        pickup();
+        bezahlen1();
+    }
+    
+    if(2==x || 0==x)
+    {
+        twix();
+        bezahlen2();
+    }
+    
+    if(3==x)
+    {
+        studentenfutter();
+        bezahlen3();
+    }
+    
+    return 0;
+}
