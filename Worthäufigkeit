@@ -1,0 +1,28 @@
+/*
+
+Programmieren Sie eine Funktion welche die Buchstaben eines Textes zählt.
+
+int count_letters(char *text, char letter, int text_length)
+Als Argumente wird der Text, der Buchstabe und die Länge des Textes übergeben. Die Funktion gibt als Rückgabewert die Anzahl an Buchstaben zurück.
+
+*/
+
+
+int count_letters(char text[], char letter, int text_length)
+{
+    int amount_letters = 0;
+    for (int i = 0; i < text_length; i++)
+    {
+        if (text[i] == letter)
+        {
+            amount_letters++;
+        }
+        
+    }
+    return amount_letters;
+}
+
+
+
+
+
