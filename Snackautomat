@@ -1,0 +1,58 @@
+/*
+Programmieren Sie einen Snackautomaten. Der Snackautomat hat 3 Produkte zur Auswahl, Pickup für 0,90€, Twix für 0,50€ und Studentenfutter für 1,50€. 
+
+Der Kunde kann über eine Taste das jeweilige Produkt auswählen. Der Snackautomat gibt daraufhin den zu bezahlenden Preis an.
+
+Die Ausgabe in einem Programm sieht z.B. wie folgt aus:
+
+Waehlen Sie einen Snack aus. Zur Auswahl stehen:
+1) Pickup
+2) Twix
+3) Studentenfutter
+Sie haben Pickup fuer 0.90 Euro ausgewaehlt.
+Werfen Sie 0.90 Euro ein.
+*/
+
+
+#include <stdio.h>
+
+void pickup()
+{
+  printf("Sie haben Pickup fuer 0.90 Euro ausgewaehlt.\nWerfen Sie 0.90 Euro ein."); 
+    
+}
+
+void twix()
+{
+  printf("Sie haben Twix fuer 0.50 Euro ausgewaehlt.\nWerfen Sie 0.50 Euro ein.");  
+      
+}
+
+void studentenfutter()
+{
+  printf("Sie haben Studentenfutter fuer 1.50 Euro ausgewaehlt.\nWerfen Sie 1.50 Euro ein.");  
+    
+}
+
+int main(){
+    
+    int x; 
+    printf("Waehlen Sie einen Snack aus. Zur Auswahl stehen:\n1) Pickup\n2) Twix\n3) Studentenfutter\n"); 
+    scanf("%d",&x);
+    if(1==x)
+    {
+        pickup();
+    }
+    
+    if(2==x)
+    {
+        twix();
+    }
+    
+    if(3==x)
+    {
+        studentenfutter();
+    }
+    
+    return 0;
+}
